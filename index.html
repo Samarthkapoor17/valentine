@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #ffebee;
+      color: #d32f2f;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #yesButton {
+      background-color: #4caf50;
+      color: white;
+    }
+    #noButton {
+      background-color: #f44336;
+      color: white;
+    }
+    .balloons {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: none;
+    }
+    .balloon {
+      position: absolute;
+      width: 100px;
+      height: 150px;
+      background-color: #ff4081;
+      border-radius: 50%;
+      animation: float 6s infinite ease-in-out;
+    }
+    .balloon::before {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 2px;
+      height: 100px;
+      background-color: #000;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh); }
+      100% { transform: translateY(-100vh); }
+    }
+    .pics {
+      display: none;
+      margin-top: 20px;
+    }
+    .pics img {
+      width: 300px;
+      height: 300px;
+      border-radius: 100%;
+      margin: 10px;
+    }
+    h3 {
+      font-size: 2rem;
+      margin-top: 20px;
+    }
+    .more {
+      display: none;
+      margin-top: 20px;
+    }
+    .paragraph {
+      display: none;
+      margin-top: 20px;
+    }
+    #cumonme {
+      background-color: red;
+      color: white;
+    }
+    .video {
+      display: none;
+      margin-top: 20px;
+      width: 80%; /* Adjust width for responsiveness */
+      max-width: 600px; /* Limit maximum width */
+    }
+    video {
+      width: 100%; /* Make video responsive */
+      border-radius: 10px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    }
+  </style>
+</head>
+<body>
+  <h1>Will You Be My Valentine Anshi?</h1>
+  <div class="buttons">
+    <button id="yesButton">Yes</button>
+    <button id="noButton">No</button>
+  </div>
+  <br>
+  <br>
+  <div class="balloons" id="balloons">
+    <div class="balloon" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="balloon" style="left: 30%; animation-delay: 2s;"></div>
+    <div class="balloon" style="left: 50%; animation-delay: 4s;"></div>
+    <div class="balloon" style="left: 70%; animation-delay: 1s;"></div>
+    <div class="balloon" style="left: 90%; animation-delay: 3s;"></div>
+  </div>
+  <div class="pics" id="pics">
+    <img src="superdonuts.jpg" alt="Your Picture">
+    <img src="hot.jpg" alt="Their Picture">
+  </div>
+  <div class="more" id="more">
+    <h3>Wanna see more? Click here</h3>
+    <button id="cumonme">Cum on me 🍑</button>
+  </div>
+  <div class="paragraph">
+    <h3>Hello future wifey, I am writing this paragraph to let you know that you are so special to me. You don't even know how much. I know I am late for asking you for Valentine's, but better late than never. You are my first, and you'll always be. Don't ever let anyone or anything change your mind. I'll always love you, and I dream of wifeying you up one day. The day will come soon, of course, to us and our unlimited quickies 🍺🍺🍺🍺🍺</h3>
+  </div>
+  <div class="video" id="video">
+    <video controls autoplay loop>
+      <source src="valentine.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <script>
+    const yesButton = document.getElementById('yesButton');
+    const noButton = document.getElementById('noButton');
+    const balloons = document.getElementById('balloons');
+    const pics = document.getElementById('pics');
+    const cumonme = document.getElementById('cumonme');
+    const more = document.getElementById('more');
+    const paragraph = document.querySelector('.paragraph');
+    const video = document.getElementById('video');
+
+    noButton.addEventListener('click', () => {
+      const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+      yesButton.style.fontSize = `${currentSize * 1.2}px`;
+    });
+
+    yesButton.addEventListener('click', () => {
+      balloons.style.display = 'block';
+      pics.style.display = 'flex';
+      more.style.display = 'block';
+      document.body.style.backgroundColor = '#f8bbd0';
+      document.querySelector('h1').textContent = 'I love youuuuu so much my apostrophe ❤️❤️❤️❤️❤️❤️';
+      yesButton.style.display = 'none';
+      noButton.style.display = 'none';
+    });
+
+    cumonme.addEventListener('click', () => {
+      balloons.style.display = 'none';
+      pics.style.display = 'none';
+      more.style.display = 'none';
+      video.style.display = 'block';
+      paragraph.style.display = 'block';
+      document.body.style.backgroundColor = '#f8bbd0';
+      document.querySelector('h1').textContent = 'I love youuuuu so much my apostrophe ❤️❤️❤️❤️❤️❤️';
+      yesButton.style.display = 'none';
+      noButton.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
